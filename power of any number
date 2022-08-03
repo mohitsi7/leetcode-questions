@@ -1,0 +1,9 @@
+def powerof_a_no(base,exp):
+    assert exp>0 and int(exp)==exp,'Power(Exponent should be greater than 0 and must be integer'
+    if exp==0:
+        return 1
+    if exp==1:
+        return base
+    else:
+        return base*powerof_a_no(base,exp-1)
+print(powerof_a_no(2,5))
