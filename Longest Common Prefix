@@ -1,0 +1,23 @@
+if len(strs) == 1:
+        return strs[0]
+    
+    
+    strs.sort(key = lambda x: len(x))
+                
+
+    ans = strs[0]
+    check = True
+    while check and ans:
+        count = 0
+        for word in strs[1:]:
+            if word[:len(ans)] == ans:
+                pass
+            else:
+                count += 1
+        if not count:
+            check = False
+        else:
+            ans = ans[:len(ans) - 1]
+            
+    
+    return ans
