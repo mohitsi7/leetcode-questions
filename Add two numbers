@@ -1,0 +1,24 @@
+class Solution:
+    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        if l1 is None or l2 is None:
+            return None
+        a=''
+        while l1:
+            a+=str(l1.val)
+            l1=l1.next
+        b=''
+        while l2:
+            b+=str(l2.val)
+            l2=l2.next
+        a=a[::-1]
+        b=b[::-1]
+        c=str(int(a)+int(b))
+        c=c[::-1]
+        d=ListNode(c[0])
+        if len(c)==1:
+            return d
+        head=d
+        for i in range(1,len(c)):
+            d.next=ListNode(c[i])
+            d=d.next
+        return head
