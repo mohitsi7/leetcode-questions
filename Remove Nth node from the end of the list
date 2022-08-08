@@ -1,0 +1,21 @@
+lst = []
+    
+    while head:
+        lst.append(head.val)
+        head = head.next
+        
+    lst[:] = lst[::-1]
+    
+    
+    del lst[n - 1]
+    
+    lst[:] = lst[::-1]
+    
+    
+    dummy = cur = ListNode(0)
+    for num in lst:
+        val = ListNode(num)
+        cur.next = val
+        cur = cur.next
+    
+    return dummy.next
