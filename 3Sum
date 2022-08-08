@@ -1,0 +1,13 @@
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        sol = []
+        
+        for i in range(len(nums)):
+            target = -nums[i]
+            dic = {}
+            for j in range(i + 1, len(nums)):
+                if nums[j] in dic.keys():
+                    sol.append(tuple(sorted([nums[i], nums[j], dic[nums[j]]])))
+                dic[tar - nums[j]] = nums[j]
+                
+        return list(set(sol))
